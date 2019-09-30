@@ -25,4 +25,7 @@
 </script>
 
 <style lang="less">
+  #page1{
+    min-height:500px;
+  }
 </style>

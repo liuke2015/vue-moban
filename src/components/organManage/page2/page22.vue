@@ -16,5 +16,7 @@
 </script>
 
 <style lang="less">
-
+  #page21{
+    min-height:500px;
+  }
 </style>

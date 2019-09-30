@@ -1,16 +1,16 @@
 <template>
-  <el-menu id="main-menu" :default-active="defaultActive" :unique-opened="true" :router="true"
+  <!--<el-menu id="main-menu" :default-active="$route.path" :unique-opened="false" :router="true"
            background-color="#33495f" active-text-color="#ddedfa">
     <template v-for="(item,index) in menuData">
-      <!--有二级列表-->
+      &lt;!&ndash;有二级列表&ndash;&gt;
       <el-submenu :index="''+index+''" v-if="item.dataList && item.isShow">
         <template slot="title">
           <i :class="['iconfont',item.icon]"></i>{{item.title}}
         </template>
         <template v-for="(current,curIndex) in item.dataList">
-          <!--无三级列表-->
+          &lt;!&ndash;无三级列表&ndash;&gt;
           <el-menu-item :index="current.router" v-if="!current.isSub && current.isShow">{{current.name}}</el-menu-item>
-          <!--有三级列表-->
+          &lt;!&ndash;有三级列表&ndash;&gt;
           <el-submenu :index="''+index+'-'+curIndex+1+''" v-if="current.isSub && current.isShow">
             <template slot="title">{{current.subTit}}</template>
             <el-menu-item :index="chi.router" v-for="chi in current.children" :key="chi.router">{{chi.name}}
@@ -18,12 +18,12 @@
           </el-submenu>
         </template>
       </el-submenu>
-      <!--无二级列表-->
+      &lt;!&ndash;无二级列表&ndash;&gt;
       <el-menu-item :index="item.router" v-if="!item.dataList && item.isShow">
         <i :class="['iconfont',item.icon]"></i>{{item.title}}
       </el-menu-item>
     </template>
-  </el-menu>
+  </el-menu>-->
 </template>
 
 <script>
@@ -33,29 +33,29 @@
       return {
       }
     },
-    computed: {
+    /*computed: {
       defaultActive() {
         let pathArray = this.$route.path.split("/");
         let ary = [];
-         setTimeout(()=>{
-           /*左侧导航刷新，重置滚动条位置*/
+       /!*  setTimeout(()=>{
+           /!*左侧导航刷新，重置滚动条位置*!/
            this.$emit("setScrollTop");
-         },1000);
-        if (pathArray.length > 3) {
-          for (let i = 0; i < pathArray.length - 1; i++) {
+         },1000);*!/
+        if (pathArray.length > 2) {
+          for (let i = 0; i < 2; i++) {
             ary.push(pathArray[i]);
           }
           let newPath = ary.join("/");
           return newPath
-        } else {
-          return this.$route.path
         }
+        return this.$route.path
       },
       menuData(){
         return this.$store.getters.menuData
       }
-    },
+    },*/
     mounted() {
+
     },
     methods: {
 
@@ -64,7 +64,7 @@
 </script>
 
 <style lang="less">
-  #main-menu {
+  /*#main-menu {
     width: 240px;
     border: 0;
 
@@ -101,6 +101,6 @@
         }
       }
     }
-  }
+  }*/
 
 </style>
