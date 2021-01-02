@@ -30,7 +30,7 @@
 
       <el-button type="text"><i class="el-icon-refresh-right"></i>刷新</el-button>
     </div>
-     <el-button size="small" @click="addTab(editableTabsValue)">
+     <el-button class="addTab" size="small" @click="addTab(editableTabsValue)">
       add tab
     </el-button>
   </div>
@@ -134,6 +134,11 @@
         color: #606266;
         font-size: 14px;
       }
+    }
+    .addTab{
+      position: absolute;
+      top: 0;
+      right: 162px;
     }
   }
 </style>
