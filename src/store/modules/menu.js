@@ -6,7 +6,7 @@ const menu={
           icon: "el-icon-edit",
           router:"0",
           dataList: [
-            {name: "页面一",router: "/organManage/page1",id:"01"},
+            {name: "活跃分析",router: "/organManage/page1",id:"01"},
             {
               name: "页面二",
               router:"1",
@@ -25,7 +25,8 @@ const menu={
             },
           ]
         },
-        {name: "页面三", router: "/page3", icon: "el-icon-share",id:"1"},
+        {name: "基础数据", router: "/baseData", icon: "el-icon-share",id:"1"},
+        {name: "留存分析", router: "/page3", icon: "el-icon-share",id:"1"},
       ]
     }
 }

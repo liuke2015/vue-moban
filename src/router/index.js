@@ -58,6 +58,11 @@ let baseRouter = [
         name: 'page3',
         component: () => import('@component/other/page3') // 页面三
       },
+      {
+        path: '/baseData',
+        name: 'baseData',
+        component: () => import('@component/other/baseData') // 基础数据
+      },
     ]
   },
 ]
