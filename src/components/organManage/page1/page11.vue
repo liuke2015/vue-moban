@@ -26,26 +26,30 @@
         let myChart = this.echarts.init(document.getElementById('dom'));
 // 绘制图表
         var data = {
-          title: ['12-01', '12-02', '12-03', '12-04', '12-05', '12-06', '12-07', '12-08', '12-09'],
-          app: [300, 490, 333, 346, 777, 888, 864, 789, 765],
-          pc: [400, 500, 300, 400, 500, 300, 400, 500, 500],
-          mz: [80, 90, 60, 70, 80, 90, 60, 70, 90],
-          total: [45, 88, 100, 110, 70, 80, 90, 100, 100]
+          title: ['12-01', '12-02', '12-03', '12-04', '12-05', '12-06', '12-07', '12-08', '12-09', '12-10', '12-11', '12-12', '12-13', '12-14', '12-15', '12-16', '12-17', '12-18', '12-19', '12-20', '12-21', '12-22', '12-23', '12-24', '12-25', '12-26', '12-27', '12-28', '12-29', '12-30'],
+          app:[{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}],
+          pc: [{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}],
+          mz: [{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}],
+          totalPerson: [{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20}, {num:490,level:20},{num:300,level:30}, {num:490,level:20}, {num:490,level:20}],
+          total: [145, 188, 1100, 110, 70, 80, 90, 100, 100,145, 188, 1100, 110, 70, 80, 90, 100, 100,145, 188, 1100, 110, 70, 80, 90, 100, 100,145, 188, 1100],
+          try:[800,901,552,703,604,305,206,507,408,800,901,552,703,604,305,206,507,408,800,901,552,703,604,305,206,507,408,800,901,552],
+          normal:[110,161,180,313,214,505,606,450,608,110,161,180,313,214,505,606,450,608,110,161,180,313,214,505,606,450,608,110,161,180],
+          other:[900,801,702,1003,804,505,306,407,808,900,801,702,1003,804,505,306,407,808,900,801,702,1003,804,505,306,407,808,900,801,702]
         };
 
         for (var pr in data) {
-          data[pr] = data[pr].slice(0, 9);
+          data[pr] = data[pr].slice(0, 30);
         }
 
         function getTableLine(num) {
           var list = [];
-          var bottom = 122;
-          var height = 20;
+          var bottom = 208;
+          var height = 40;
           for (var i = 0; i < num; i++) {
             list.push({
               type: 'line',
               bottom: bottom - i * height,
-              right: 80,
+              right: 0,
               style: {
                 fill: '#333'
               },
@@ -66,10 +70,10 @@
         let option = {
           title: [{
             text: ' \nAPP\nPC\nM站\n总活跃人数',
-            bottom: 42,
-            left: 10,
+            bottom: 65,
+            left: 8,
             textStyle: {
-              lineHeight: 20,
+              lineHeight: 40,
               fontSize: 13,
               fontWeight: 'normal',
               formatter: function(value) {
@@ -92,12 +96,12 @@
             }
           },
           legend: {
-            data: ['APP', 'PC', 'M站', '总活跃人数']
+            data: [ '总活跃人数','试学用户', '正式用户', '其他']
           },
           grid: {
-            bottom: 150,
+            bottom: 235,
             left: 80,
-            right: 80
+            right: 220
           },
           toolbox: {
             show: true,
@@ -108,6 +112,7 @@
           dataZoom: {
             show: true,
             type:'slider',
+          /*  zoomLock:true,*/
             start: 0,
             end: 50
             // zoomLock: true
@@ -117,7 +122,7 @@
             boundaryGap: false,
             data: data.title,
             axisTick: {
-              length: 108
+              length: 186
             },
             axisLabel: {
               align:'left',
@@ -129,10 +134,10 @@
                   }
                 }
                 return '{table|' + value +
-                  '}\n{table|' + data.app[indexNum] +
-                  '}\n{table|' + data.pc[indexNum] +
-                  '}\n{table|' + data.mz[indexNum] +
-                  '%}\n{table|' + data.total[indexNum] + '%}';
+                  '}\n{table|' + data.app[indexNum].num+'\n 占比 '+data.app[indexNum].level +
+                  '%}\n{table|' + data.pc[indexNum].num+'\n 占比 '+data.pc[indexNum].level +
+                  '%}\n{table|' + data.mz[indexNum].num+'\n 占比 '+data.mz[indexNum].level +
+                  '%}\n{table|' + data.totalPerson[indexNum].num+'\n 占比 '+data.totalPerson[indexNum].level + '%}{table|}';
               },
               rich: {
                 table: {
@@ -153,19 +158,9 @@
             min: function(v) {
               return Math.max((v.min - 10), 0);
             }
-          }, {
-            type: 'value',
-            scale: true,
-            name: '百分比',
-            splitLine: {
-              show: false
-            },
-            axisLabel: {
-              formatter: '{value} %'
-            }
           }],
           series: [{
-            name: 'APP',
+            name: '试学用户',
             type: 'line',
             areaStyle: {
               /*color:"#91c7ae"*/
@@ -174,10 +169,9 @@
               show: true,
               position: 'top'
             },*/
-            yAxisIndex: 0,
-            data: data.app
+            data: data.try
           }, {
-            name: 'PC',
+            name: '正式用户',
             type: 'line',
             areaStyle: {
              /* color:"#d48265"*/
@@ -186,10 +180,10 @@
               show: true,
               position: 'top'
             },*/
-            yAxisIndex: 0,
-            data: data.pc
+
+            data: data.normal
           }, {
-            name: 'M站',
+            name: '其他',
             type: 'line',
             areaStyle: {
              /* color:"#63a1a9"*/
@@ -199,8 +193,8 @@
               position: 'top',
               formatter: '{c}'
             },*/
-            yAxisIndex: 1,
-            data: data.mz
+
+            data: data.other
           }, {
             name: '总活跃人数',
             type: 'line',
@@ -212,7 +206,6 @@
               position: 'top',
               formatter: '{c}'
             },
-            yAxisIndex: 1,
             data: data.total
           }],
           graphic: lineList
@@ -230,7 +223,7 @@
     min-height:500px;
     #dom{
       width:100%;
-      height:600px;
+      height:700px;
     }
   }
 </style>
