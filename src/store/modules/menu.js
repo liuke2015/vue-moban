@@ -11,7 +11,7 @@ const menu={
               name: "页面二",
               router:"1",
               dataList: [
-                {name: "页面二-1", router: "/organManage/page2",id:"02"},
+                {name: "二维码", router: "/organManage/page2",id:"02"},
                 {name: "页面二-2",router: "/organManage/page23",id:"03"},
               ]
             },
